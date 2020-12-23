@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+        <script src="moment.js"></script>
+        <title>Quick Chapters for YouTube</title>
+  </head>  
+  <body>
+
+    <h1>Quick Chapters for YouTube</h1>
+    <p>Quickly make chapters for YouTube videos. Just pause and add a chapter.</p>
+    <div id="player"></div>
+    <div>
+        <textarea name="video link" id="link" cols="30" rows="1" placeholder="Paste YouTube link here"></textarea>
+        <button onclick="changeVideo()">Load Video</button>
+    </div>
+    <br>
+    <div>
+        <textarea name="title" id="title" cols="30" rows="1" placeholder="Write a title"></textarea>
+        <button onclick="writeTitle()">Add This Chapter</button>
+    </div>
+    <div>
+        <textarea name="" id="results" cols="30" rows="10" placeholder="Your YouTube chapters will appear here"></textarea>
+    </div>
+
+    <script>
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: null,
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      function onPlayerStateChange(event) {
+        console.log(player.getCurrentTime());
+      }
+      
+      function changeVideo(){
+        let videoLink = document.getElementById('link').value;
+        console.log(videoLink)
+        if (videoLink != ''){
+
+          player.loadVideoById(videoLink.split("v=")[1].substring(0, 11));
+        }
+      }
+
+      function convertTime(time){
+        let hours = time/3600;
+        let minutes = (hours - Math.floor(hours)) * 60;
+        let seconds = time % 60;
+
+        hours = Math.floor(hours);
+        minutes = Math.floor(minutes);
+        seconds = Math.floor(seconds);
+
+        if ((minutes + "").length == 1){
+            minutes = "0" + minutes;
+        }
+
+        if ((seconds + "").length == 1){
+            seconds = "0" + seconds;
+        }
+
+        return hours + ":" + minutes + ":" + seconds;
+      }
+      
+      function writeTitle(){
+          let title = document.getElementById('title').value;
+          
+          let chapter = convertTime(player.getCurrentTime()) + " " + title + "\n";
+          let currentResults = document.getElementById('results').value; 
+          document.getElementById('results').value = currentResults + chapter;
+      }
+    </script>
+    <a href="https://github.com/Nassim-Saboundji" target="_blank">Made by Nassim Saboundji</a>
+  </body>
+</html>
