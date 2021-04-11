@@ -24,21 +24,22 @@
           </div>
       </div>
 
-      <div class="column mx-4">
+      <div class="column mx-4 px-4">
           <div class="mt-6">
-              <textarea name="video link" id="link" cols="30" rows="1" placeholder="Paste YouTube link here"></textarea>
-              <button id="loadVid" onclick="changeVideo()">Load Video</button>
+              <input class="input" name="video link" id="link" cols="30" rows="1" placeholder="Paste YouTube link here"></input>
+              <br>
+              <button id="loadVid" class="" onclick="changeVideo()">Load Video</button>
           </div>
           <br>
-          <div>
-              <textarea name="title" id="title" cols="30" rows="1" placeholder="Write a title"></textarea>
-              <button id="writeTitle" onclick="writeTitle()">Add This Chapter</button>
+          <div class="">
+              <input class="input" name="title" id="title" cols="30" rows="1" placeholder="Write a title"></input>
+              <br>
+              <button id="writeTitle" class="" onclick="writeTitle()">Add This Chapter</button>
           </div>
-          <div>
-              <textarea name="" id="results" cols="30" rows="10" placeholder="Your YouTube chapters will appear here"></textarea>
-          </div>
-          <div>
-            <button onclick="copyToClipboard()">Copy To Clipboard</button>
+          <div class="mt-6">
+              <textarea class="textarea" name="" id="results" cols="30" rows="10" placeholder="Your YouTube chapters will appear here"></textarea>
+              <br>
+              <button onclick="copyToClipboard()">Copy To Clipboard</button>
           </div>
       </div>  
     </div>
