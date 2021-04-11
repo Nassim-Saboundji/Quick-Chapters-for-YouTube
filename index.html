@@ -29,6 +29,9 @@
     <div>
         <textarea name="" id="results" cols="30" rows="10" placeholder="Your YouTube chapters will appear here"></textarea>
     </div>
+    <div>
+      <button onclick="copyToClipboard()">Copy To Clipboard</button>
+    </div>
 
     <script>
       var tag = document.createElement('script');
@@ -97,6 +100,18 @@
           let currentResults = document.getElementById('results').value; 
           document.getElementById('results').value = currentResults + chapter;
       }
+
+      function copyToClipboard(){
+          
+          let chapters = document.getElementById("results");
+
+          chapters.select();
+          chapters.setSelectionRange(0, 99999); 
+
+          document.execCommand("copy");
+      }
+
+
     </script>
     <a href="https://github.com/Nassim-Saboundji" target="_blank">Made by Nassim Saboundji</a>
   </body>
