@@ -77,7 +77,7 @@ function sleep(ms) {
 async function copyToClipboard(){
     
     let chapters = document.getElementById("results");
-    chapters.value += "Made with Quick Chapters for YouTube. The extension is available on (Chrome) and (Firefox)";
+    chapters.value += "Made with Quick Chapters for YouTube. visit nassim-saboundji[dot]github[dot]io/Quick-Chapters-for-YouTube/";
     chapters.select();
     chapters.setSelectionRange(0, 99999); 
     document.execCommand("copy");
@@ -109,7 +109,6 @@ input.addEventListener("keyup", function(event) {
     // Cancel the default action, if needed
     event.preventDefault();
     // Trigger the button element with a click
-    console.log("HEY IT WORKS!");
     document.getElementById("loadVid").click();
   }
 }); 
