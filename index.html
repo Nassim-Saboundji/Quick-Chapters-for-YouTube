@@ -3,20 +3,50 @@
   <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-        <script src="moment.js"></script>
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"> -->
         <title>Quick Chapters for YouTube</title>
         <style>
           .hidden {
             display: none;
           }
+          .videoWrapper {
+            position: relative;
+            /* padding-bottom: 56.25%; 16:9 */
+            height: 0;
+            padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
+          }
+
+          .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+          
+          body {
+            background: white;
+            height: 100vh;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 1rem;
+          }
         </style>
   </head>  
   <body>
 
-    <h1>Quick Chapters for YouTube</h1>
-    <p>Quickly make chapters for YouTube videos. Just pause and add a chapter.</p>
-    <div id="player" class="hidden"></div>
+    <div id="info" class="">
+      <h class="title">Quick Chapters for YouTube</h1>
+      <p class="subtitle">Quickly make chapters for YouTube videos. Just pause and add a chapter.</p>
+    </div>
+    
+    
+    <div class="wrapperContainer">
+      <div class="videoWrapper">
+        <div id="player" class="hidden"></div>
+      </div>
+    </div>
+    
     <div>
         <textarea name="video link" id="link" cols="30" rows="1" placeholder="Paste YouTube link here"></textarea>
         <button onclick="changeVideo()">Load Video</button>
@@ -43,8 +73,8 @@
       var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          height: '390',
-          width: '640',
+          height: '349',
+          width: '560',
           videoId: null,
           events: {
             'onReady': onPlayerReady,
@@ -63,7 +93,8 @@
       
       function changeVideo(){
         
-        document.getElementById("player").classList.remove("hidden");;
+        let playerContainer = document.getElementById("player");
+        playerContainer.classList.remove("hidden");
 
         let videoLink = document.getElementById('link').value;
         console.log(videoLink)
