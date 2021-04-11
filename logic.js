@@ -77,7 +77,7 @@ function sleep(ms) {
 async function copyToClipboard(){
     
     let chapters = document.getElementById("results");
-    chapters.value += "Made with Quick Chapters for YouTube. visit nassim-saboundji[dot]github[dot]io/Quick-Chapters-for-YouTube/";
+    chapters.value += "Made with Quick Chapters for YouTube. Visit nassim-saboundji[dot]github[dot]io/Quick-Chapters-for-YouTube/ to use it.";
     chapters.select();
     chapters.setSelectionRange(0, 99999); 
     document.execCommand("copy");
