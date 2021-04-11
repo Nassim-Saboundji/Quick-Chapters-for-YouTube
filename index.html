@@ -16,7 +16,7 @@
     
     <div class="columns">
 
-      <div class="column is-two-thirds mx-4">
+      <div id="columnContainer" class="column is-two-thirds mx-4 hidden">
           <div id="outerVideoContainer"class="hidden">
             <div class="videoWrapper">
               <div id="player" class="hidden mt-4"></div>
@@ -32,7 +32,7 @@
           <br>
           <div>
               <textarea name="title" id="title" cols="30" rows="1" placeholder="Write a title"></textarea>
-              <button onclick="writeTitle()">Add This Chapter</button>
+              <button id="writeTitle" onclick="writeTitle()">Add This Chapter</button>
           </div>
           <div>
               <textarea name="" id="results" cols="30" rows="10" placeholder="Your YouTube chapters will appear here"></textarea>

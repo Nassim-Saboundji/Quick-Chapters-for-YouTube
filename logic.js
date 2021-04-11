@@ -30,6 +30,7 @@ function changeVideo(){
     let playerContainer = document.getElementById("player");
     playerContainer.classList.remove("hidden");
     document.getElementById('outerVideoContainer').classList.remove("hidden");
+    document.getElementById('columnContainer').classList.remove('hidden');
 
     let videoLink = document.getElementById('link').value;
     console.log(videoLink)
@@ -91,4 +92,18 @@ input.addEventListener("keyup", function(event) {
     console.log("HEY IT WORKS!");
     document.getElementById("loadVid").click();
   }
+}); 
+
+let titleInput = document.getElementById('title');
+titleInput.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard  
+    if (event.key === "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      let title = titleInput.value.split("\n");
+      titleInput.value = title[0];
+
+      document.getElementById("writeTitle").click();
+    }
 }); 
