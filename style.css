@@ -14,11 +14,3 @@
     width: 100%;
     height: 100%;
 }
-
-body {
-    background: white;
-    height: 100vh;
-    /* max-width: 500px; */
-    margin: 0 auto;
-    padding: 1rem;
-}
