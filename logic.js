@@ -18,45 +18,45 @@ player = new YT.Player('player', {
 }
 
 function onPlayerReady(event) {
-event.target.playVideo();
+    event.target.playVideo();
 }
 
 function onPlayerStateChange(event) {
-console.log(player.getCurrentTime());
+    console.log(player.getCurrentTime());
 }
 
 function changeVideo(){
 
-let playerContainer = document.getElementById("player");
-playerContainer.classList.remove("hidden");
-document.getElementById('outerVideoContainer').classList.remove("hidden");
+    let playerContainer = document.getElementById("player");
+    playerContainer.classList.remove("hidden");
+    document.getElementById('outerVideoContainer').classList.remove("hidden");
 
-let videoLink = document.getElementById('link').value;
-console.log(videoLink)
-if (videoLink != ''){
+    let videoLink = document.getElementById('link').value;
+    console.log(videoLink)
+    if (videoLink != ''){
 
-    player.loadVideoById(videoLink.split("v=")[1].substring(0, 11));
-}
+        player.loadVideoById(videoLink.split("v=")[1].substring(0, 11));
+    }
 }
 
 function convertTime(time){
-let hours = time/3600;
-let minutes = (hours - Math.floor(hours)) * 60;
-let seconds = time % 60;
+    let hours = time/3600;
+    let minutes = (hours - Math.floor(hours)) * 60;
+    let seconds = time % 60;
 
-hours = Math.floor(hours);
-minutes = Math.floor(minutes);
-seconds = Math.floor(seconds);
+    hours = Math.floor(hours);
+    minutes = Math.floor(minutes);
+    seconds = Math.floor(seconds);
 
-if ((minutes + "").length == 1){
-    minutes = "0" + minutes;
-}
+    if ((minutes + "").length == 1){
+        minutes = "0" + minutes;
+    }
 
-if ((seconds + "").length == 1){
-    seconds = "0" + seconds;
-}
+    if ((seconds + "").length == 1){
+        seconds = "0" + seconds;
+    }
 
-return hours + ":" + minutes + ":" + seconds;
+    return hours + ":" + minutes + ":" + seconds;
 }
 
 function writeTitle(){
@@ -77,3 +77,18 @@ function copyToClipboard(){
 
     document.execCommand("copy");
 }
+
+// Get the input field
+let input = document.getElementById("link");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard  
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    console.log("HEY IT WORKS!");
+    document.getElementById("loadVid").click();
+  }
+}); 
