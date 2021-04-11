@@ -27,7 +27,7 @@
           body {
             background: white;
             height: 100vh;
-            max-width: 400px;
+            max-width: 500px;
             margin: 0 auto;
             padding: 1rem;
           }
@@ -41,7 +41,7 @@
     </div>
     
     
-    <div class="wrapperContainer">
+    <div id="outerVideoContainer"class="hidden">
       <div class="videoWrapper">
         <div id="player" class="hidden"></div>
       </div>
@@ -95,6 +95,7 @@
         
         let playerContainer = document.getElementById("player");
         playerContainer.classList.remove("hidden");
+        document.getElementById('outerVideoContainer').classList.remove("hidden");
 
         let videoLink = document.getElementById('link').value;
         console.log(videoLink)
