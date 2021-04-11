@@ -77,6 +77,7 @@ function copyToClipboard(){
     chapters.setSelectionRange(0, 99999); 
 
     document.execCommand("copy");
+    chapters.value = "";
 }
 
 // Get the input field
@@ -106,4 +107,18 @@ titleInput.addEventListener("keyup", function(event) {
 
       document.getElementById("writeTitle").click();
     }
-}); 
+
+    //we press shift while the player is playing
+    if (event.key === "Shift") {
+        event.preventDefault();
+        //the video is currently playing! so pause it.
+        if (player.getPlayerState() == 1){
+            player.pauseVideo();
+        }
+        
+        //the video is currently paused! so play it.
+        if (player.getPlayerState() == 2){
+            player.playVideo();
+        }
+    }
+});
