@@ -69,14 +69,20 @@ function writeTitle(){
     document.getElementById('title').value = "";
 }
 
-function copyToClipboard(){
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+async function copyToClipboard(){
     
     let chapters = document.getElementById("results");
-
+    chapters.value += "Made with Quick Chapters for YouTube. The extension is available on (Chrome) and (Firefox)";
     chapters.select();
     chapters.setSelectionRange(0, 99999); 
-
     document.execCommand("copy");
+    chapters.value = "Copy to clipboard successful!";
+    await sleep(3000);
     chapters.value = "";
 }
 
