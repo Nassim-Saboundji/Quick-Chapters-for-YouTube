@@ -120,5 +120,18 @@ titleInput.addEventListener("keyup", function(event) {
         if (player.getPlayerState() == 2){
             player.playVideo();
         }
+
+    }
+
+    if (event.key === "Alt") {
+        player.pauseVideo();
+        player.seekTo(player.getCurrentTime() + 5, true);
+        player.playVideo();
+    }
+
+    if (event.key === "Control") {
+        player.pauseVideo();
+        player.seekTo(player.getCurrentTime() - 5, true);
+        player.playVideo();
     }
 });
