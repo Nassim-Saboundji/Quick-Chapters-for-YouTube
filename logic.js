@@ -134,4 +134,16 @@ titleInput.addEventListener("keyup", function(event) {
         player.seekTo(player.getCurrentTime() - 5, true);
         player.playVideo();
     }
+
+    if (event.key === "ArrowUp") {
+        player.pauseVideo();
+        player.seekTo(player.getCurrentTime() + 30, true);
+        player.playVideo();
+    }
+
+    if (event.key === "ArrowDown") {
+        player.pauseVideo();
+        player.seekTo(player.getCurrentTime() - 30, true);
+        player.playVideo();
+    }
 });
