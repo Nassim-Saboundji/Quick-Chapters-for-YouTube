@@ -9,11 +9,26 @@
   </head>  
   <body>
 
-    <div id="info" class="">
+    <div id="info" class="mx-4 px-4">
       <h class="title">Quick Chapters for YouTube</h1>
       <p class="subtitle">Quickly make chapters for YouTube videos. Just pause and add a chapter.</p>
     </div>
-    
+    <article class="message is-danger mt-4">
+      <div class="message-body">
+        On Desktop you can use the following handy commands :
+        <ul>
+          <li><strong>Enter</strong> as a substitute for "Load Video" and "Add this chapter" buttons.</li>
+        </ul>
+        <ul>
+          For when you have the "Write a title" box selected :
+          <li><strong>Shift</strong> to play/pause.</li>
+          <li> <strong>Alt</strong> go forward by 5 seconds  </li>
+          <li> <strong>Ctrl</strong> go backward by 5 seconds </li>
+          <li> <strong>ArrowUp</strong> go forward by 30 seconds </li>
+          <li> <strong>ArrowDown</strong> go backward by 30 seconds</li>
+        </ul>
+      </div>
+    </article>
     <div class="columns">
 
       <div id="columnContainer" class="column is-two-thirds mx-4 hidden">
@@ -40,6 +55,7 @@
               <textarea class="textarea" name="" id="results" cols="30" rows="8" placeholder="Your YouTube chapters will appear here"></textarea>
               <br>
               <button onclick="copyToClipboard()">Copy To Clipboard</button>
+              <button onclick="backToYouTube()">Go Back To YouTube</button>
           </div>
       </div>  
     </div>

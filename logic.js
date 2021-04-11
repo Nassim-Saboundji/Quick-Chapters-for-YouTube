@@ -86,6 +86,17 @@ async function copyToClipboard(){
     chapters.value = "";
 }
 
+
+function backToYouTube(){
+    console.log("it works no");
+    let url = document.getElementById("link").value;
+    window.location.href = url;
+    history.pushState({},"", "");
+}
+
+
+
+
 // Get the input field
 let input = document.getElementById("link");
 
