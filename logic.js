@@ -94,7 +94,9 @@ function backToYouTube(){
     history.pushState({},"", "");
 }
 
-
+function deletePopup(){
+    document.getElementById("popup").remove();
+}
 
 
 // Get the input field
