@@ -6,12 +6,17 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
         <script src="moment.js"></script>
         <title>Quick Chapters for YouTube</title>
+        <style>
+          .hidden {
+            display: none;
+          }
+        </style>
   </head>  
   <body>
 
     <h1>Quick Chapters for YouTube</h1>
     <p>Quickly make chapters for YouTube videos. Just pause and add a chapter.</p>
-    <div id="player"></div>
+    <div id="player" class="hidden"></div>
     <div>
         <textarea name="video link" id="link" cols="30" rows="1" placeholder="Paste YouTube link here"></textarea>
         <button onclick="changeVideo()">Load Video</button>
@@ -54,6 +59,9 @@
       }
       
       function changeVideo(){
+        
+        document.getElementById("player").classList.remove("hidden");;
+
         let videoLink = document.getElementById('link').value;
         console.log(videoLink)
         if (videoLink != ''){
