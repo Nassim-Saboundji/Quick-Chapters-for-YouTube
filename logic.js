@@ -9,7 +9,7 @@ function onYouTubeIframeAPIReady() {
 player = new YT.Player('player', {
     height: '349',
     width: '560',
-    videoId: null,
+    videoId: 'WOkBI2UdBcE',
     events: {
     'onReady': onPlayerReady,
     'onStateChange': onPlayerStateChange
@@ -28,9 +28,9 @@ function onPlayerStateChange(event) {
 function changeVideo(){
 
     let playerContainer = document.getElementById("player");
-    playerContainer.classList.remove("hidden");
-    document.getElementById('outerVideoContainer').classList.remove("hidden");
-    document.getElementById('columnContainer').classList.remove('hidden');
+    //playerContainer.classList.remove("hidden");
+    //document.getElementById('outerVideoContainer').classList.remove("hidden");
+    //document.getElementById('columnContainer').classList.remove('hidden');
 
     let videoLink = document.getElementById('link').value;
     console.log(videoLink)
